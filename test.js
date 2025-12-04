@@ -1,16 +1,28 @@
-const snake_score = 0;
-localStorage.setItem("snake_score", snake_score);
+function snake_score() {
+    // Récupération du compteur dans localStorage (0 par défaut)
+    let score = localStorage.getItem("pommesTrouvees");
+    if (!score) score = 0;
 
-snake_score.addEventListener("click", () => {
-		snake_score++;
-	}
-);
+	window.addEventListener("beforeunload", () => {
+		localStorage.removeItem("pommesTrouvees");
+	});
 
-function snake_Incr() {
-	localStorage.setItem("snake_score", parseInt(localStorage.getItem("snake_score")) + 1);
-	a++;
-}
+    // On met à jour l'affichage
+    document.getElementById("compteur").textContent = score;
 
-function foncVert() {
-	
+    // Récupérer toutes les pommes (boutons)
+    const pommes = document.querySelectorAll('.pomme');
+
+    // Ajouter un clic à chaque pomme
+    pommes.forEach(pomme => {
+        pomme.addEventListener('click', () => {
+            score++;
+            localStorage.setItem("pommesTrouvees", score);
+            document.getElementById("compteur").textContent = score;
+
+            // On peut désactiver la pomme une fois trouvée
+            pomme.disabled = true;
+            pomme.style.opacity = "0.4";
+        });
+    });
 }
