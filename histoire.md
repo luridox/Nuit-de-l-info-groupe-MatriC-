@@ -5,7 +5,7 @@ Certains pourraient nous trouver arbitraires ou trop oppressants, mais notre uni
 
 - une messagerie complètement sécurisé, chiffrée de bout en bout vous offrant un contrôle sur votre vie privée (*) avec un tout nouveau modèle d'IA qui pourra en temps réel vous prévenir des fraudes ou tout autres arnaques.
 
--Enfin la protection ultime face à tous les dangers d'internet le Goliath Numérique, son rôle est de traquer et d'éliminer numériquement toutes personnes qui pourraient nuire à notre belle nation en les effaçant numériquement pour qu'ils ne puissent plus jamais causer du malheur.
+- Enfin la protection ultime face à tous les dangers d'internet le Goliath Numérique, son rôle est de traquer et d'éliminer numériquement toutes personnes qui pourraient nuire à notre belle nation en les effaçant numériquement pour qu'ils ne puissent plus jamais causer du malheur.
 
 
 Depuis des dizaines d'années, nous nous efforçons de rendre votre vie sur le net plus facile et plus sécurisé et nous vous remercions pour toutes la confiance que vous nous portez.
