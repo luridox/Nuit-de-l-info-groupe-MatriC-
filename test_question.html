@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 2 Questions</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 180px;
+        }
+
+        #score {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: green;
+        }
+
+        .ligne-questions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+            width: 80%;
+        }
+
+        .question-block {
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 2px solid #444;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .question {
+            
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .reponses {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Quizz pour voir si tu est un vrai résistant</h1>
+
+
+
+<div class="ligne-questions">
+
+    <!-- QUESTION 1 -->
+    <div class="question-block">
+        <div class="question">Quel est le plus grand océan ?</div>
+
+        <div class="reponses">
+            <button data-bonne="false">Atlantique</button>
+            <button data-bonne="true">Pacifique</button>
+            <button data-bonne="false">Indien</button>
+            <button data-bonne="false">Arctique</button>
+        </div>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="question-block">
+        <div class="question">Quelle planète est la plus chaude ?</div>
+
+        <div class="reponses">
+            <button data-bonne="false">Mercure</button>
+            <button data-bonne="true">Vénus</button>
+            <button data-bonne="false">Terre</button>
+            <button data-bonne="false">Mars</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Charger score
+    let scord = parseInt(localStorage.getItem("scord") || "0");
+
+    // Pour chaque bloc question
+    const blocks = document.querySelectorAll(".question-block");
+
+    blocks.forEach(block => {
+        const buttons = block.querySelectorAll("button");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+
+                if (btn.dataset.bonne === "true") {
+                    scord++;
+                    localStorage.setItem("scord", scord);
+                    alert("Bonne réponse !");
+                } else {
+                    alert("Mauvaise réponse !");
+                }
+
+                // Désactiver les réponses de cette question
+                buttons.forEach(b => b.disabled = true);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
