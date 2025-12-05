@@ -9,6 +9,25 @@ h1 {
     align-items: center;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    color: rgb(251, 251, 251);
+    overflow: hidden;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    /* Centrage */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 /* Cibler l'élément ayant la classe "bouton" */
 .bouton {
     background-color: #f9fefa; /* Couleur de fond */
