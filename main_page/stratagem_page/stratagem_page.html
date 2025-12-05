@@ -48,6 +48,7 @@
         // ==== 2. Générer une séquence aléatoire ====
         const sequenceLength = 5;  // nombre de flèches
         let sequence = [];
+        var verife = true;
         // séquence aléatoire pour mettre les flèches
         function randomSequence() {
             sequence = [];
@@ -98,9 +99,15 @@
                 // Mauvaise touche
                 info.textContent = "Échec — recommence";
                 position = 0;
+                verife = false;
                 displaySequence();
             }
         });
+
+        if(verife){
+            incrementer_game_score();
+        }
+        
         </script>
         <br>
         <a href="../question_page/question_page.html" class="btn-start" style="text-decoration:none; display:inline-block;">Page suivante</a>

@@ -31,21 +31,26 @@
 
         <script>
             var texte = "Je soussigné être totalement libre de mes mouvements et ne suis en aucun cas menacé par une arme";
-            
+            var verife = true;
             // affiche le texte à recopier 
             document.getElementById("texte_r").innerText = "Recopie ce texte : " + texte;
 
             function verif(){
                 var saisie = document.getElementById("phrase-block").value;
                 var result_texte = document.getElementById("resultat");
-
+                
                 if (saisie == texte){
                     result_texte.innerText = "Bravo tu est un vrai résistant";
                     result_texte.style.color = "green";
                 } else {
                     result_texte.innerText = "Tu ne résiste pas assez, recommence";
                     result_texte.style.color = "red";
+                    verife = false;
                 }
+            }
+
+            if(verife){
+                incrementer_game_score();
             }
 
         </script>
