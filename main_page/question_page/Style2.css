@@ -106,13 +106,60 @@ p.subtitle {
 }
 
 .bg-accueil {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Ville-1.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/ville/Ville-1.png');
 }
 
 .bg-milieu {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Ville-2.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/ville/Ville-2.png');
 }
 
 .bg-fin {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Ville-3.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/ville/Ville-3.png');
+}
+
+#score {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: green;
+}
+
+.ligne-questions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement dans le conteneur */
+    width: 80%;
+    margin: 0 auto;          /* centre la grille */
+}
+
+
+.question-block {
+    margin: 0 auto; /* conserve juste le centrage horizontal */
+    border: 2px solid #a048bf;
+    padding: 15px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.question {
+    font-size: 20px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.reponses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
 }
