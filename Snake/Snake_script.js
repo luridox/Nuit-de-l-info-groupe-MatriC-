@@ -14,7 +14,7 @@ let food = {
 
 let score = 0;
 
-let d
+let d = "RIGHT";
 
 document.addEventListener("keydown", direction);
 
@@ -32,7 +32,7 @@ function direction(event){
 }
 
 function draw() {
-    context.clearReact(0, 0, 400, 400)
+    context.clearRect(0, 0, 400, 400)
 
     for(let i=0; i < snake.length; i++){
         context.fillStyle = (i == 0) ? "green" : "white"
@@ -76,7 +76,7 @@ function draw() {
 
     context.fillStyle = "red"
     context.font = "30px Arial"
-    context.fillText(score, 21*box, 1.6*box)
+    context.fillText(score, 2*box, 1.6*box)
 
 }
 
