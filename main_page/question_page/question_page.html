@@ -20,9 +20,62 @@
 
     <div class="hero-content">
         <h1>L'Arène</h1>
-        <p class="subtitle">Ici, le code s'écrit en temps réel.</p>
+        <p class="subtitle">Quizz pour voir si tu est un vrai résistant</p>
+        <div class="ligne-questions">
+        <!-- QUESTION 1 -->
+        <div class="question-block">
+            <div class="question">Quel est le plus grand océan ?</div>
+
+            <div class="reponses">
+                <button data-bonne="false">Atlantique</button>
+                <button data-bonne="true">Pacifique</button>
+                <button data-bonne="false">Indien</button>
+                <button data-bonne="false">Arctique</button>
+            </div>
+        </div>
+
+        <!-- QUESTION 2 -->
+        <div class="question-block">
+            <div class="question">Quelle planète est la plus chaude ?</div>
+
+            <div class="reponses">
+                <button data-bonne="false">Mercure</button>
+                <button data-bonne="true">Vénus</button>
+                <button data-bonne="false">Terre</button>
+                <button data-bonne="false">Mars</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Charger score
+        let scord = parseInt(localStorage.getItem("scord"));
+
+        // Pour chaque bloc question
+        const blocks = document.querySelectorAll(".question-block");
+
+        blocks.forEach(block => {
+            const buttons = block.querySelectorAll("button");
+
+            buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+
+                    if (btn.dataset.bonne === "true") {
+                        scord++;
+                        localStorage.setItem("scord", scord);
+                        alert("Bonne réponse !");
+                    } else {
+                        alert("Mauvaise réponse !");
+                    }
+
+                    // Désactiver les réponses de cette question
+                    buttons.forEach(b => b.disabled = true);
+                });
+            });
+        });
+    </script>
         
-        <p>Ceci est ta deuxième page.</p>
         <br>
         <a href="../Accueil_page/accueil_page.html" class="btn-start" style="text-decoration:none; display:inline-block;">Retour à l'accueil</a>
     </div>
