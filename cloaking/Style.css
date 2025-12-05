@@ -1,0 +1,112 @@
+/* Cibler toutes les balises h1 */
+h1 {
+    color: darkblue; /* Définir la couleur du texte */
+    font-size: 2.25rem;/* Définir la taille de la police */
+    padding-bottom: 2px;
+    margin-bottom: 8px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Cibler l'élément ayant la classe "bouton" */
+.bouton {
+    background-color: #f9fefa; /* Couleur de fond */
+    padding: 10px 20px; /* Espace intérieur (haut/bas, gauche/droite) */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+.police-Titre {
+    font-size: 1.85rem;
+    font-family:var(--nc-font-sans) ;
+}
+
+.texte-petit {
+    font-size:smaller;
+}
+
+/* Style de la boîte de dialogue */
+dialog.popup-style {
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  /* Animation d'apparition */
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Style du fond sombre arrière (Natif au navigateur) */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px); /* Petit effet de flou sympa */
+}
+
+/* La croix de fermeture */
+.close-cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Animation simple */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style du bouton (optionnel) */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 1. Style du mot dans le texte */
+.mot-cliquable {
+  color: #000000;        /* Noir comme le reste du texte */
+  cursor: pointer;       /* Affiche la petite main au survol */
+}
+
+.mot-cliquable:hover {
+  background-color: #eef; /* Petit surlignage au survol */
+}
+
+/* 2. Style du bouton lien dans le pop-up */
+.btn-lien {
+  display: inline-block;
+  background-color: #28a745; /* Vert */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none; /* Enlève le soulignement du lien */
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-annuler {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* 3. Style général du pop-up (comme vu précédemment) */
+dialog.popup-style {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
