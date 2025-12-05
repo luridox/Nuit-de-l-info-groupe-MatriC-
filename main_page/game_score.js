@@ -1,42 +1,49 @@
 function snake_score() {
-    // Lecture du score actuel
     let score = parseInt(localStorage.getItem("pommesTrouvees")) || 0;
 
-    // Mise à jour de l'affichage
     const compteur = document.getElementById("compteur");
+    const pomme = document.querySelector(".pomme");
+    const snakeLink = document.getElementById("snakeLink");
+
     if (compteur) compteur.textContent = score;
 
-    // Récupérer l'unique bouton pomme
-    const pomme = document.querySelector(".pomme");
     if (!pomme) return;
 
-    // Vérifier si cette page a déjà cliqué sa pomme
     const key = "pommeClicked_" + location.pathname;
+
+    // Si la pomme a déjà été cliquée
     if (localStorage.getItem(key) === "true") {
         pomme.disabled = true;
         pomme.style.opacity = "0.4";
     }
 
-    // Clic sur la pomme
+    // Vérifie si le score permet déjà de débloquer Snake
+    if (score >= 4 && snakeLink) {
+        snakeLink.style.display = "inline-block"; // lien visible
+    }
+
+    // Au clic sur la pomme
     pomme.addEventListener("click", () => {
         if (pomme.disabled) return;
 
-        // Incrémenter le score
         score++;
         localStorage.setItem("pommesTrouvees", score);
         localStorage.setItem(key, "true");
 
-        // Désactiver la pomme
         pomme.disabled = true;
         pomme.style.opacity = "0.4";
 
-        // Mettre à jour l'affichage
         if (compteur) compteur.textContent = score;
+
+        // Débloquer le lien Snake si 4 pommes atteintes
+        if (score >= 4 && snakeLink) {
+            snakeLink.style.display = "inline-block";
+        }
     });
 }
 
-// Appeler au chargement de chaque page
 document.addEventListener("DOMContentLoaded", snake_score);
+
 
 function resetSnake() {
     localStorage.removeItem("pommesTrouvees");
