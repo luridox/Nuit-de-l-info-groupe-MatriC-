@@ -21,17 +21,17 @@
     <div class="hero-content">
         <h1>L'Arène</h1>
         <p class="subtitle">Montre que tu est un vrai résistant</p>
-        
+        <p>Ton score est : <span id="finalScore"></span></p>
         <div id="texte_r"></div>
         <!--pour saisir le texte-->
         <input id="phrase-block" class="block" type="text"/> 
 
         <button class="bouton" onclick="verif()">Valider</button>
         <div id="resultat"></div>
-
+        <script src="../game_score.js"></script>
         <script>
+            init_score();
             var texte = "Je soussigné être totalement libre de mes mouvements et ne suis en aucun cas menacé par une arme";
-            var verife = true;
             // affiche le texte à recopier 
             document.getElementById("texte_r").innerText = "Recopie ce texte : " + texte;
 
@@ -42,23 +42,20 @@
                 if (saisie == texte){
                     result_texte.innerText = "Bravo tu est un vrai résistant";
                     result_texte.style.color = "green";
+                    incrementer_game_score();
+                    show_final_score();
                 } else {
                     result_texte.innerText = "Tu ne résiste pas assez, recommence";
                     result_texte.style.color = "red";
-                    verife = false;
                 }
-            }
-
-            if(verife){
-                incrementer_game_score();
             }
 
         </script>
         <br>
         <a href="../Snake_page/snake_page.html" class="btn-start" style="text-decoration:none; display:inline-block;">Page suivante</a>
     </div>
-
+    
     <script src="Script2.js"></script>
-    <script src="../game_score.js"></script>
+    
 </body>
 </html>

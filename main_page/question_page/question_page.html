@@ -21,6 +21,7 @@
     <div class="hero-content">
         <h1>L'Arène</h1>
         <p class="subtitle">Quizz pour voir si tu est un vrai résistant</p>
+        <p>Ton score est : <span id="finalScore"></span></p>
         <div class="ligne-questions">
         <!-- QUESTION 1 -->
         <div class="question-block">
@@ -47,11 +48,11 @@
         </div>
 
     </div>
-
+    <script src="../game_score.js"></script>
     <script>
         // Charger score
-        let scord = parseInt(localStorage.getItem("scord"));
-
+        let scord = 0;
+        init_score();
         // Pour chaque bloc question
         const blocks = document.querySelectorAll(".question-block");
 
@@ -69,7 +70,9 @@
                         alert("Mauvaise réponse !");
                     }
         if(scord == 2){
+            
             incrementer_game_score();
+            show_final_score();
         }
                     // Désactiver les réponses de cette question
                     buttons.forEach(b => b.disabled = true);
@@ -80,8 +83,11 @@
         
         <br>
         <a href="../Type_page/type_page.html" class="btn-start" style="text-decoration:none; display:inline-block;">Page suivante</a>    </div>
-
+    
+    <script>
+        
+    </script>
     <script src="Script2.js"></script>
-    <script src="../game_score.js"></script>
+    
 </body>
 </html>

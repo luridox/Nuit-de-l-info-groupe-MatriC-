@@ -27,25 +27,31 @@ function snake_score() {
     });
 }
 
-function game_score() {
-    let game_score = localStorage.getItem("score");
-    if (!game_score) game_score = 0;
-
-    // Nettoyage du stockage à la fermeture de la page si tu veux
-    window.addEventListener("beforeunload", () => {
-        localStorage.removeItem("score");
-    });
-
-    // Retourner le score si besoin
-    return game_score;
+function reset_score() {
+    localStorage.setItem("score", 0);
 }
 
-function increment_game_score() {
-    let current = parseInt(localStorage.getItem("score"));
-    if (isNaN(current)) current = 0;
+function init_score() {
+    let s = localStorage.getItem("score");
+    if (s === null) {
+        localStorage.setItem("score", 0);   // Première visite → score = 0
+    }
+}
 
-    current++;                     // Incrémentation
-    localStorage.setItem("score", current);
 
-    return current;                // Pour éventuellement afficher en direct
+function incrementer_game_score() {
+    let s = parseInt(localStorage.getItem("score"));
+    if (isNaN(s)) s = 0;
+
+    s++;
+    localStorage.setItem("score", s);
+
+    return s;
+}
+
+function show_final_score() {
+    let s = localStorage.getItem("score");
+    if (!s) s = 0;
+
+    document.getElementById("finalScore").textContent = s;
 }

@@ -21,11 +21,18 @@
     <div class="hero-content">
         <h1>Bats-toi, NIRD</h1>
         <p class="subtitle">Le code est ton arme. L'arène t'attend.</p>
-        
+        <p>Ton score final est : <span id="finalScore">0</span></p>
         <button class="btn-start" onclick="demarrerAventure()">ENTRER</button>
     </div>
-
+    
     <script src="Script2.js"></script>
-    <script src="../game_score.js">gamescore();</script>
+    <script src="../game_score.js"></script>
+    <script>
+        
+        reset_score();
+        show_final_score();
+        init_score();
+        
+    </script>
 </body>
 </html>

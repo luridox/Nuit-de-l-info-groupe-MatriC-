@@ -22,16 +22,17 @@
         <h1>L'Arène</h1>
         <p class="subtitle">Ici, le code s'écrit en temps réel.</p>
         
-        <p>Ceci est ta deuxième page.</p>
+        <p>Ton score final est : <span id="finalScore">0</span></p>
         <br>
 
         <a href="../Accueil_page/accueil_page.html" class="btn-start" style="text-decoration:none; display:inline-block;">Retour à l'accueil</a>
     </div>
-
+    <script src="../game_score.js"></script>
+    <script>
+        init_score();
+        show_final_score();
+    </script>
     <script src="Script2.js"></script>
-    <script src="../game_score.js">        
-    let nouveauScore = increment_game_score();
-        console.log("Score :", nouveauScore);
-        </script>
+    
 </body>
 </html>
