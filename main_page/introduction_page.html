@@ -33,6 +33,7 @@
     <div class="hero-content">
         <h1>L'Arène</h1>
         <p class="subtitle">Ici, le code s'écrit en temps réel.</p>
+        <p>Pommes trouvées : <span id="compteur">0</span></p>
         <p>Ton score final est : <span id="finalScore">0</span></p>
         <p>
             	Nird est un groupe pour la sécurité et la prospérité de chacun. 
@@ -48,7 +49,7 @@
             Pour y arriver, nous effectuons plusieurs actions : création de nouveaux sous-groupes, 
             développement de réseaux de communication et discussions avec les populations locales.
         </p>
-        <button class="pomme" onclick=snake_score()>🍎</button>
+        <button class="pomme">🍎</button>
         <p>
             Finalement, nous encourageons nos alliés à développer leurs groupes et si l'occasion se 
             présente d'à leur tour créer des sous-groupes afin d'intégrer le plus grand monde à notre 
@@ -59,10 +60,10 @@
     </div>
 
     <script src="Script2.js"></script>
+    <script src="../game_score.js"></script>
     <script>
         init_score();
         show_final_score();
     </script>
-    <script src="../game_score.js"></script>
 </body>
 </html>

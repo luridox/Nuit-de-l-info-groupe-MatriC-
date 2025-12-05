@@ -1,31 +1,41 @@
 function snake_score() {
-    // Récupération du compteur dans localStorage (0 par défaut)
-    let snake_score = localStorage.getItem("pommesTrouvees");
-    if (!snake_score) snake_score = 0;
+    let score = parseInt(localStorage.getItem("pommesTrouvees")) || 0;
 
-	window.addEventListener("beforeunload", () => {
-		localStorage.removeItem("pommesTrouvees");
-	});
+    const compteur = document.getElementById("compteur");
+    if (compteur) compteur.textContent = score;
 
-    // On met à jour l'affichage
-    document.getElementById("compteur").textContent = snake_score;
+    const pomme = document.querySelector('.pomme');
+    if (!pomme) return;
 
-    // Récupérer toutes les pommes (boutons)
-    const pommes = document.querySelectorAll('.pomme');
+    // Si déjà cliquée => désactiver
+    if (localStorage.getItem("pommeClicked") === "true") {
+        pomme.disabled = true;
+        pomme.style.opacity = "0.4";
+    }
 
-    // Ajouter un clic à chaque pomme
-    pommes.forEach(pomme => {
-        pomme.addEventListener('click', () => {
-            snake_score++;
-            localStorage.setItem("pommesTrouvees", snake_score);
-            document.getElementById("compteur").textContent = snake_score;
+    // Au clic
+    pomme.addEventListener('click', () => {
+        if (pomme.disabled) return;
 
-            // On peut désactiver la pomme une fois trouvée
-            pomme.disabled = true;
-            pomme.style.opacity = "0.4";
-        });
+        score++;
+        localStorage.setItem("pommesTrouvees", score);
+        localStorage.setItem("pommeClicked", "true");
+
+        if (compteur) compteur.textContent = score;
+
+        pomme.disabled = true;
+        pomme.style.opacity = "0.4";
     });
 }
+
+document.addEventListener("DOMContentLoaded", snake_score);
+
+
+function resetSnake() {
+    localStorage.removeItem("pommesTrouvees");
+    localStorage.removeItem("pommeClicked");
+}
+
 
 function reset_score() {
     localStorage.setItem("score", 0);
@@ -54,4 +64,25 @@ function show_final_score() {
     if (!s) s = 0;
 
     document.getElementById("finalScore").textContent = s;
+}
+
+function getLevel() {
+    const snake = parseInt(localStorage.getItem("pommesTrouvees")) || 0;
+    const game  = parseInt(localStorage.getItem("score")) || 0;
+
+    if (snake >= 0 && game >= 3) return 1; // Gagné
+    //else(snake = 4 && game >= 3) return 3; // Fin snake
+    //else(snake < 4 && game >= 3) return 4; // Perdu Python
+    else return 2;// Perdu
+}
+
+function switch_Level() {
+    switch (getLevel()) {
+   case 1:
+        window.location.href = "gagne_page.html";
+        break;
+    case 2:
+        window.location.href = "perdu_page.html";
+        break;
+}
 }

@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="Style2.css">
 </head>
-<body class="bg-accueil">
+<body onloadstart="resetSnake()" class="bg-accueil">
     <nav class="menu">
         <a href="accueil_page.html" class="actif">Accueil</a>
         <a href="../introduction_page.html"></a>
@@ -16,12 +16,13 @@
         <a href="../Type_page/type_page.html"></a>
         <a href="../Snake_page/snake_page.html"></a>
         <a href="../Final_page/final_page.html"></a>
-        <button class="pomme" onclick=snake_score()>🍎</button>
+        <button class="pomme">🍎</button>
     </nav>
 
     <div class="hero-content">
         <h1>Bats-toi, NIRD</h1>
         <p class="subtitle">Le code est ton arme. L'arène t'attend.</p>
+        <p>Pommes trouvées : <span id="compteur">0</span></p>
         <p>Ton score final est : <span id="finalScore">0</span></p>
         <button class="btn-start" onclick="demarrerAventure()">ENTRER</button>
     </div>
