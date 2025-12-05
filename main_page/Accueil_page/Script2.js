@@ -11,6 +11,6 @@ function demarrerAventure() {
         localStorage.setItem('accesAutorise', 'true');
 
         // 2. ON REDIRIGE VERS LA PAGE
-        window.location.href = "Introduction.html"; 
+        window.location.href = "../Introduction.html"; 
     }, 1000);
 }
