@@ -116,10 +116,10 @@ dialog::backdrop {
 }
 
 .image-reduite {
-    width: 20px; /* Force la largeur à 300 pixels */
+    width: 50px; /* Force la largeur à 300 pixels */
     height: auto; /* La hauteur s'adapte toute seule pour garder les proportions */
     
     /* OU BIEN, pour que ce soit responsive (adaptable) : */
     max-width: 100%; /* Elle ne dépassera jamais la largeur de son conteneur */
-    max-width: 20px; /* Elle ne dépassera jamais 300px */
+    max-width: 50px; /* Elle ne dépassera jamais 300px */
 }
