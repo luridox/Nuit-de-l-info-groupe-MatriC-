@@ -1,6 +1,10 @@
 /* Reset de base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+canvas {
+    border: 2px solid;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100vh;
