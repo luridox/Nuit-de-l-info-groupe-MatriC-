@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", snake_score);
 
 
 function resetSnake() {
-    localStorage.removeItem("pommesTrouvees");
     localStorage.removeItem("pommeClicked");
 }
 
