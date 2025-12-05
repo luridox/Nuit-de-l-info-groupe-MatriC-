@@ -18,6 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 40px;
 }
 
 /* Le conteneur principal (Glassmorphism) */
@@ -115,4 +116,32 @@ p.subtitle {
 
 .bg-fin {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Ville-3.png');
+}
+#sequence {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.arrow {
+    width: 70px;
+    height: 70px;
+    opacity: 0.5;
+    
+}
+
+.active {
+    opacity: 1;
+    border: 2px solid rgb(128, 0, 255);
+    border-radius: 8px;
+}
+
+#info {
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    background: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
 }
