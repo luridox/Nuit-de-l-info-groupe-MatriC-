@@ -106,13 +106,35 @@ p.subtitle {
 }
 
 .bg-accueil {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Ville-1.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/ville/Ville-1.png');
 }
 
 .bg-milieu {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Ville-2.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/ville/Ville-2.png');
 }
 
 .bg-fin {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Ville-3.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/ville/Ville-3.png');
+}
+
+.texte_r{
+    font-size: 20px;
+    
+}
+
+.block{
+    border: 2px solid #3b45a3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    border-radius: 20px;
+}
+.phrase-block{
+    font-size: 20px;
+}
+.bouton{
+    border: 2px solid #3b45a3;
+    border-radius: 10px;
 }
