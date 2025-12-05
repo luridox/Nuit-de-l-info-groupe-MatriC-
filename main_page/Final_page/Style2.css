@@ -116,3 +116,12 @@ p.subtitle {
 .bg-fin {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Ville-3.png');
 }
+
+.image-reduite {
+    width: 50px; /* Force la largeur à 300 pixels */
+    height: auto; /* La hauteur s'adapte toute seule pour garder les proportions */
+    
+    /* OU BIEN, pour que ce soit responsive (adaptable) : */
+    max-width: 100%; /* Elle ne dépassera jamais la largeur de son conteneur */
+    max-width: 50px; /* Elle ne dépassera jamais 300px */
+}
