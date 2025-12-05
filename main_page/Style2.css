@@ -116,3 +116,32 @@ p.subtitle {
 .bg-fin {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/ville/Ville-3.png');
 }
+
+/* Pomme 1 : Collée en haut à gauche */
+.pomme-1 {
+    top: 20px;  /* 20 pixels depuis le haut */
+    left: 20px; /* 20 pixels depuis la gauche */
+}
+
+/* Pomme 2 : Collée en bas à droite */
+.pomme-2 {
+    bottom: 20px; /* 20 pixels depuis le bas */
+    right: 20px;  /* 20 pixels depuis la droite */
+}
+
+/* Pomme 3 : À un endroit précis (ex: 40% du haut, 10% de la gauche) */
+.pomme-3 {
+    top: 40%;
+    left: 10%;
+    transform: rotate(20deg); /* On peut même la pencher un peu ! */
+}
+
+.pomme-4 {
+    top: 50px;
+    right: 20px;
+}
+
+.pomme-5 {
+    bottom: 20px;
+    left: 30px;
+}
