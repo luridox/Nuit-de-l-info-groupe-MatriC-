@@ -20,9 +20,35 @@
 
     <div class="hero-content">
         <h1>L'Arène</h1>
-        <p class="subtitle">Ici, le code s'écrit en temps réel.</p>
+        <p class="subtitle">Montre que tu est un vrai résistant</p>
         
-        <p>Ceci est ta deuxième page.</p>
+        <div id="texte_r"></div>
+        <!--pour saisir le texte-->
+        <input id="phrase-block" class="block" type="text"/> 
+
+        <button class="bouton" onclick="verif()">Valider</button>
+        <div id="resultat"></div>
+
+        <script>
+            var texte = "test test";
+            
+            // affiche le texte à recopier 
+            document.getElementById("texte_r").innerText = "Recopie ce texte : " + texte;
+
+            function verif(){
+                var saisie = document.getElementById("phrase-block").value;
+                var result_texte = document.getElementById("resultat");
+
+                if (saisie == texte){
+                    result_texte.innerText = "Bravo tu est un vrai résistant";
+                    result_texte.style.color = "green";
+                } else {
+                    result_texte.innerText = "Tu ne résiste pas assez, recommence";
+                    result_texte.style.color = "red";
+                }
+            }
+
+        </script>
         <br>
         <a href="../Snake_page/Résultats Snake.html" class="btn-start" style="text-decoration:none; display:inline-block;">Page suivante</a>
     </div>
