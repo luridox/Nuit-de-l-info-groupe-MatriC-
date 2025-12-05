@@ -1,38 +1,47 @@
 function snake_score() {
+    // Lecture du score actuel
     let score = parseInt(localStorage.getItem("pommesTrouvees")) || 0;
 
+    // Mise à jour de l'affichage
     const compteur = document.getElementById("compteur");
     if (compteur) compteur.textContent = score;
 
-    const pomme = document.querySelector('.pomme');
+    // Récupérer l'unique bouton pomme
+    const pomme = document.querySelector(".pomme");
     if (!pomme) return;
 
-    // Si déjà cliquée => désactiver
-    if (localStorage.getItem("pommeClicked") === "true") {
+    // Vérifier si cette page a déjà cliqué sa pomme
+    const key = "pommeClicked_" + location.pathname;
+    if (localStorage.getItem(key) === "true") {
         pomme.disabled = true;
         pomme.style.opacity = "0.4";
     }
 
-    // Au clic
-    pomme.addEventListener('click', () => {
+    // Clic sur la pomme
+    pomme.addEventListener("click", () => {
         if (pomme.disabled) return;
 
+        // Incrémenter le score
         score++;
         localStorage.setItem("pommesTrouvees", score);
-        localStorage.setItem("pommeClicked", "true");
+        localStorage.setItem(key, "true");
 
-        if (compteur) compteur.textContent = score;
-
+        // Désactiver la pomme
         pomme.disabled = true;
         pomme.style.opacity = "0.4";
+
+        // Mettre à jour l'affichage
+        if (compteur) compteur.textContent = score;
     });
 }
 
+// Appeler au chargement de chaque page
 document.addEventListener("DOMContentLoaded", snake_score);
 
-
 function resetSnake() {
-    localStorage.removeItem("pommeClicked");
+    localStorage.removeItem("pommesTrouvees");
+    localStorage.removeItem("pommeClicked_" + location.pathname);
+    //localStorage.removeItem("compteur");
 }
 
 
