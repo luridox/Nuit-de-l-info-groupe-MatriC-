@@ -9,10 +9,10 @@
 <body class="bg-milieu">
 
     <nav class="menu">
-        <a href="../Accueil_page/Phase2.html" class="actif">Accueil</a>
+        <a href="../Accueil_page/Phase2.html">Accueil</a>
         <a href="../Introduction.html">L'Arène</a>
         <a href="../Stratagem_page/Les flèches.html">Jeux des flèches</a>
-        <a href="Mini-jeux.html">Questions</a>
+        <a href="Mini-jeux.html" class="actif">Questions</a>
         <a href="../Type_page/Recopier.html">Recopier!!</a>
         <a href="../Snake_page/Résultat Snake.html">Snake</a>
         <a href="../Final_page/Résultat final.html">Résultats</a>
@@ -20,9 +20,62 @@
 
     <div class="hero-content">
         <h1>L'Arène</h1>
-        <p class="subtitle">Ici, le code s'écrit en temps réel.</p>
+        <p class="subtitle">Quizz pour voir si tu est un vrai résistant</p>
+        <div class="ligne-questions">
+        <!-- QUESTION 1 -->
+        <div class="question-block">
+            <div class="question">Quel est le plus grand océan ?</div>
+
+            <div class="reponses">
+                <button data-bonne="false">Atlantique</button>
+                <button data-bonne="true">Pacifique</button>
+                <button data-bonne="false">Indien</button>
+                <button data-bonne="false">Arctique</button>
+            </div>
+        </div>
+
+        <!-- QUESTION 2 -->
+        <div class="question-block">
+            <div class="question">Quelle planète est la plus chaude ?</div>
+
+            <div class="reponses">
+                <button data-bonne="false">Mercure</button>
+                <button data-bonne="true">Vénus</button>
+                <button data-bonne="false">Terre</button>
+                <button data-bonne="false">Mars</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Charger score
+        let scord = parseInt(localStorage.getItem("scord"));
+
+        // Pour chaque bloc question
+        const blocks = document.querySelectorAll(".question-block");
+
+        blocks.forEach(block => {
+            const buttons = block.querySelectorAll("button");
+
+            buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+
+                    if (btn.dataset.bonne === "true") {
+                        scord++;
+                        localStorage.setItem("scord", scord);
+                        alert("Bonne réponse !");
+                    } else {
+                        alert("Mauvaise réponse !");
+                    }
+
+                    // Désactiver les réponses de cette question
+                    buttons.forEach(b => b.disabled = true);
+                });
+            });
+        });
+    </script>
         
-        <p>Ceci est ta deuxième page.</p>
         <br>
         <a href="Phase2.html" class="btn-start" style="text-decoration:none; display:inline-block;">Retour à l'accueil</a>
     </div>
