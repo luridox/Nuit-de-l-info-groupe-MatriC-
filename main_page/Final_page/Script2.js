@@ -14,3 +14,13 @@ function demarrerAventure() {
         window.location.href = "../introduction_page.html"; 
     }, 1000);
 }
+
+const lien = document.getElementById("monLien");
+
+lien.addEventListener("mouseover", () => {
+    lien.style.color = "orange";
+});
+
+lien.addEventListener("mouseout", () => {
+    lien.style.color = "blue"; // couleur par défaut
+});

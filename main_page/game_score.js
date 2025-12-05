@@ -1,28 +1,20 @@
 function snake_score() {
     let score = parseInt(localStorage.getItem("pommesTrouvees")) || 0;
-
     const compteur = document.getElementById("compteur");
     const pomme = document.querySelector(".pomme");
     const snakeLink = document.getElementById("snakeLink");
 
     if (compteur) compteur.textContent = score;
-
     if (!pomme) return;
 
     const key = "pommeClicked_" + location.pathname;
 
-    // Si la pomme a déjà été cliquée
+    // Désactiver la pomme si déjà cliquée
     if (localStorage.getItem(key) === "true") {
         pomme.disabled = true;
         pomme.style.opacity = "0.4";
     }
 
-    // Vérifie si le score permet déjà de débloquer Snake
-    if (score >= 4 && snakeLink) {
-        snakeLink.style.display = "inline-block"; // lien visible
-    }
-
-    // Au clic sur la pomme
     pomme.addEventListener("click", () => {
         if (pomme.disabled) return;
 
@@ -40,15 +32,26 @@ function snake_score() {
             snakeLink.style.display = "inline-block";
         }
     });
+
+    // Vérifier si le score actuel débloque déjà Snake
+    if (score >= 4 && snakeLink) {
+        snakeLink.style.display = "inline-block";
+    }
 }
 
 document.addEventListener("DOMContentLoaded", snake_score);
 
-
 function resetSnake() {
-    localStorage.removeItem("pommesTrouvees");
-    localStorage.removeItem("pommeClicked_" + location.pathname);
-    //localStorage.removeItem("compteur");
+    // Remet à zéro le score global
+    localStorage.setItem("pommesTrouvees", 0);
+    localStorage.setItem("compteur", 0);
+    // Supprime tous les flags de pommes sur toutes les pages
+    Object.keys(localStorage).forEach(key => {
+        if (key.startsWith("pommeClicked_")) {
+            localStorage.removeItem(key);
+        }
+    });
+
 }
 
 
