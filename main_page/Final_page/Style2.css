@@ -126,3 +126,10 @@ p.subtitle {
     color: rgb(212, 255, 0); /* couleur par défaut */
     text-decoration: none; /* facultatif */
 }
+
+.image-reduite{
+    width: 400px; /* Force la largeur à 300 pixels */
+    height: auto; /* La hauteur s'adapte toute seule pour garder les proportions */
+}
+
+
